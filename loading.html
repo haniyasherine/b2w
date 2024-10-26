@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #eeeeee;
+        }
+        .loading-container {
+            height: 1000px;
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(https://i.pinimg.com/736x/26/be/80/26be806e8d6fc163d4d0588a88613932.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;   
+        }
+        .loading-text {
+            font-size: 1.5em;
+            color: #efefef;
+            margin-bottom: 20px;
+            animation: blink 1.5s linear infinite;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 6px solid #ccc;
+            border-top-color: #ff0066;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+            margin: 0 auto;
+        }
+        .monkey-image {
+            display: none;
+            margin-top: 20px;
+            width: 800px;
+            height: auto;
+        }
+        .plinktext {
+            font-size: 40px;
+            color: #000000;
+            display: none; /* Initially hidden */
+        }
+        /* Animations */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-container">
+        <div class="loading-text" id="loadingText">Your partner is loading...</div>
+        <div class="spinner" id="spinner"></div>
+        <img src="https://wallpapers.com/images/featured/monkey-pictures-8h0v87o9km8bz65x.jpg" alt="Monkey" class="monkey-image" id="monkeyImage">
+        <p class="plinktext" id="plinktext">Perfect match for you...!</p>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("loadingText").style.display = "none";
+            document.getElementById("spinner").style.display = "none";
+            document.getElementById("monkeyImage").style.display = "block";
+            document.getElementById("plinktext").style.display = "block";
+            
+            // Remove the background image
+            document.querySelector(".loading-container").style.backgroundImage = "none"; 
+        }, 5000); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Set black background and center content */
+        body {
+            background-image: url(https://img.freepik.com/free-vector/two-paper-hearts-pink-with-text-space_1017-29623.jpg);
+            /* background-color: black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        /* Style for the container */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0.5, 0.3, 0.5, 0.3);
+        }
+        /* Center the form header text */
+        .text-center {
+            color: #fff;
+        }
+        /* Link style */
+        a {
+            color: #fd710d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Login</h2>
+        <form id="loginForm" class="mt-4">
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="  btn btn-danger w-100 mt-3">Login</button>
+        </form>
+        <p class="text-center mt-3">Don't have an account? <a href="#">Sign up here</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            window.location.href = "personal details.html";
+        });
+    </script>
+</body>       
+</html>         
